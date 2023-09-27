@@ -85,7 +85,18 @@
 
   <div id="Profile" class="tabcontent">
     <h3>Profile</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <div class="profile"></div>
+      <h3>Profile</h3>
+      <img class="image" src="InitialImage.jpg" alt="">
+    </div>
+
+    <div class="popup-container" id="popup">
+      <div class="popup-content">
+          <h2>Your Profile</h2>
+          <p>Additional profile information can go here.</p>
+          <button onclick="closePopup()">Close</button>
+      </div>
+  </div>
   </div>
 
   <div id="Colors" class="tabcontent">
@@ -185,5 +196,22 @@
     }
 
     //-------------------End of Choices Tab---------------------------------------
-      
+
+    //---------------------Profile Tab-------------------------------------------------
+
+      function openPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "flex";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+
+        // Add a click event listener to the profile image
+        var profileImage = document.querySelector(".image");
+        profileImage.addEventListener("click", openPopup);
+
+      //---------------end Profile Tab
     </script>
