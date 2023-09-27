@@ -33,3 +33,11 @@
     border: 1px solid #ccc;
     border-top: none;
   }
+
+#yellow {
+    color: yellow;
+  }
+
+  #black {
+    color: black;
+  }
