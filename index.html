@@ -50,11 +50,22 @@
   
   <div id="Choices" class="tabcontent">
     <h3>Choices</h3>
-    <p>Player1 Team</p>
-    <input type="radio" id="red1" name="fav_language" value="red1">
+    <label for="Player1">Player1 Team</label><br><br>
+
+    <input type="radio" id="red1" name="Player1" value="Red">
     <label for="red1">Red</label><br>
-    <input type="radio" id="blue1" name="fav_language" value="blue1">
-    <label for="blue1">Blue</label><br>
+    <input type="radio" id="blue1" name="Player1" value="Blue">
+    <label for="blue1">Blue</label><br><br><br>
+
+    <label for="Player2">Player2 Team</label><br><br>
+
+    <select name="Player2" id="Player2">
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+    </select><br><br><br>
+
+    <button type="submit" onclick="unhide()">Submit</button>
+    <div id="result"></div>
   </div>
   
   <div id="ToDo" class="tabcontent">
@@ -153,5 +164,26 @@
     });
 
     //------------------End of TODO Tab javascript stuff-----------------------------
+
+    //------------------This is for Choices Tab--------------------------------------
+
+    function unhide() {
+        document.getElementById("result").innerHTML = "";
+        var p1 = document.getElementsByName('Player1');
+        const p2 = document.querySelector('#Player2');
+        for (i = 0; i < p1.length; i++) {
+            if (p1[i].checked) {
+                document.getElementById("result").innerHTML
+                        += p1[i].name + ": "
+                        + p1[i].value + "<br>";
+            } 
+        }
+
+            document.getElementById("result").innerHTML
+                        += p2.name + ": "
+                        + p2.value + "<br>";
+    }
+
+    //-------------------End of Choices Tab---------------------------------------
       
     </script>
