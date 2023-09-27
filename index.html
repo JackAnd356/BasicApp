@@ -58,8 +58,18 @@
   </div>
   
   <div id="ToDo" class="tabcontent">
-    <h3>ToDo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <h1>Task List</h1>
+
+      <h2>Add a Task</h2>
+      <form id="task-form">
+          <input type="text" id="task" placeholder="Enter a task" required>
+          <button type="submit">Add Task</button>
+      </form>
+
+      <h2>Task List</h2>
+      <ul id="task-list">
+          <!-- Tasks will be added here -->
+      </ul>
   </div>
 
   <div id="Profile" class="tabcontent">
@@ -100,4 +110,48 @@
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.className += " active";
     }
+
+    //-----------------This the Javascript for the TODO Tab----------------------------
+    // Get references to HTML elements
+    const taskForm = document.getElementById('task-form');
+    const taskInput = document.getElementById('task');
+    const taskList = document.getElementById('task-list');
+
+    // Function to create a new task item
+    function createTaskItem(taskText) {
+        const listItem = document.createElement('li');
+        listItem.textContent = taskText;
+        
+        // Create a delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'x';
+        deleteButton.className = 'delete-button';
+
+        // Add a click event listener to the delete button
+        deleteButton.addEventListener('click', function () {
+            listItem.remove(); // Remove the task item when the button is clicked
+        });
+
+        listItem.appendChild(deleteButton);
+        return listItem;
+    }
+
+    // Event listener for the form submission
+    taskForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent the form from submitting and reloading the page
+
+        const taskText = taskInput.value.trim(); // Remove leading/trailing whitespace
+
+        if (taskText !== '') {
+            // Create a new task item and add it to the task list
+            const listItem = createTaskItem(taskText);
+            taskList.appendChild(listItem);
+
+            // Clear the input field for the next task
+            taskInput.value = '';
+        }
+    });
+
+    //------------------End of TODO Tab javascript stuff-----------------------------
+      
     </script>
