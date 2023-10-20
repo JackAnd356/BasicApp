@@ -1,23 +1,40 @@
 /*
     Style for profile image
 */
-#profileImage{
+#profileImage {
     border-radius: 3em;
+    width: 12em; /* Set a fixed width for the image */
+    height: 12em;
+    flex-shrink: 0; /* Prevent the image from shrinking in flexbox */
 }
 
-/*
-    Ordering for Profile Image and About me Section
-*/
-#image-aboutme{
+#image-aboutme {
     padding: 2em;
     display: flex;
 }
 
-#aboutMeContent{
-    padding:1em;
-    
+#aboutMeContent {
+    padding: 1em;
+    max-width: 40em; /* Set a maximum width for the content */
+    overflow: auto; /* Add scrollbars if content overflows */
 }
+
 /* Styling for contents p */
 #aboutMeContent p{
     max-width: 20em;
+}
+
+.card{
+    background-color: #D6CC99;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    border-radius: 30px;
+    box-shadow: 2px 1px 4px gray, 1px 4px 5px rgb(225, 213, 213);
+    /* border: solid green; */
+    transition: all .5s ease;
+}
+.card:hover{
+    transform: translate3D(0,-1px,0) scale(1.02); 
+    box-shadow: 2px 1px 1px, 1px 12px 3px rgb(196, 194, 190);
+    transition: all .4s ease; /* zoom in */
 }
