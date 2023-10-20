@@ -15,4 +15,9 @@
 
 #aboutMeContent{
     padding:1em;
+    
+}
+/* Styling for contents p */
+#aboutMeContent p{
+    max-width: 20em;
 }
