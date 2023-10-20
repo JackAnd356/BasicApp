@@ -1,0 +1,18 @@
+/*
+    Style for profile image
+*/
+#profileImage{
+    border-radius: 3em;
+}
+
+/*
+    Ordering for Profile Image and About me Section
+*/
+#image-aboutme{
+    padding: 2em;
+    display: flex;
+}
+
+#aboutMeContent{
+    padding:1em;
+}
