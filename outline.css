@@ -1,3 +1,16 @@
+/*
+    COLOR PALLETE (we could change these if we prefer something else
+    
+    // darkest
+    #001524     
+    #445D48
+    #D6CC99
+    #FDE5D4
+    // lightest
+
+*/
+
+
 /* 
     Don't need to touch these
 */
@@ -9,7 +22,8 @@ body {
 
 .main-body{
     margin: 2rem;
-    background-color: aliceblue;
+    background-color: #FDE5D4;
+    border-radius: 1rem;
 }
 
 /*
@@ -32,7 +46,7 @@ Styling for the heading
     /* max-width: 600px; */
 
     border-radius: 1rem;
-    background-color: aqua;
+    background-color: #D6CC99;
     margin-bottom: 1em;
 }
 .centered-text {
@@ -74,10 +88,10 @@ Styling for the heading
     display: block;
     padding: 0.5em 1em;
     text-decoration: none;
-    color: #333;
+    color: #445D48;
 }
 #myLinks a:hover {
-    background-color: #f5f5f5;
+    background-color: #e4cfbf;
 }
 .contents {
     text-align: center;
