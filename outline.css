@@ -1,0 +1,84 @@
+/* 
+    Don't need to touch these
+*/
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    font-size: 20px;
+}
+
+.main-body{
+    margin: 2rem;
+    background-color: aliceblue;
+}
+
+/*
+
+Styling for the heading
+
+*/
+.heading-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* max-width: 600px; */
+
+    border-radius: 1rem;
+    background-color: aqua;
+    margin-bottom: 1em;
+}
+.centered-text {
+    flex-grow: 1;
+    text-align: center;
+}
+.centered-text p {
+    margin: 0;
+}
+
+/* Icons in heading bar */
+#hamburgerIcon {
+    width: 3em;
+    cursor: pointer;
+    margin-left: 3rem;
+}
+#hamburgerIcon:hover{
+    transform: scale(1.2);
+    transition-duration: .3s;
+}
+#profile_icon{
+    width: 3em;
+    cursor: pointer;
+    margin-right: 3rem;
+}
+#profile_icon:hover{
+    transform: scale(1.2);
+    transition-duration: .3s;
+}
+
+/* Links in hamburger menu*/
+#myLinks {
+    display: none;
+    width: 100%;
+    /* max-width: 600px; */
+    text-align: left;
+}
+#myLinks a {
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #333;
+}
+#myLinks a:hover {
+    background-color: #f5f5f5;
+}
+.contents {
+    text-align: center;
+}
