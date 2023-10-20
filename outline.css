@@ -96,5 +96,9 @@ Styling for the heading
     background-color: #e4cfbf;
 }
 .contents {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
     text-align: center;
 }
