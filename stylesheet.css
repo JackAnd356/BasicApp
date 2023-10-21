@@ -1,48 +1,53 @@
-  .topnav {
-    overflow: hidden;
-    background-color: #60cd82;
-    position: relative;
-  }
-  
-  /* Hide the links inside the navigation menu (except for logo/home) */
-  .topnav #myLinks {
-    display: none;
-  }
-  
-  /* Style navigation menu links */
-  .topnav a {
-    color: white;
-    padding: 30px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-  }
-  
-  /* Style the hamburger menu */
-  .topnav a.hamburger {
-    background: rgb(255, 255, 255);
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+.card {
+  background-color: #D6CC99;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 30px;
+  box-shadow: 2px 1px 4px gray, 1px 4px 5px rgb(225, 213, 213);
+  /* border: solid green; */
+  transition: all .5s ease;
+}
 
-  .topnav a.profile_icon {
-    background: rgb(255, 255, 255);
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  
-  /* Add a grey background color on mouse-over */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Style the active link (or home/logo) */
-  .active {
-    background-color: #04AA6D;
-    color: white;
-  }
+.card:hover {
+  transform: translate3D(0, -1px, 0) scale(1.02);
+  box-shadow: 2px 1px 1px, 1px 12px 3px rgb(196, 194, 190);
+  transition: all .4s ease;
+}
+
+#rotw {
+  width: 100%;
+}
+
+#rotw_description {
+  left: 0;
+  width: 70%;
+}
+
+#rotw_time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+
+#rotw_name {
+  font-family: garamond, serif;
+}
+
+#timer_icon {
+  width: 3em;
+  cursor: pointer;
+  right: 0;
+}
+
+.horizontal-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.float-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+}
