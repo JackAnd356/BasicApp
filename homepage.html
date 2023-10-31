@@ -31,7 +31,7 @@
                 <!-- Linking hamburger menu -->
                 <img src="icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
                 <div class="centered-text">
-                    <h1>Your Heading Here</h1>
+                    <h1>Kitchefy</h1>
                 </div>
                 <img src="icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
             </div>
@@ -63,32 +63,23 @@
             <div class="float-container">
 
                 <div class="applet">
-                    <div class="card" id="fridge">
+                    <div class="card" id="fridge" onclick="window.location='fridgeTab/fridgeTab.html'">
                         <img src="icons/fridge.png"
                             alt="Avatar" style="width:10em; height:10em;">
                     </div>
-                    <div class="app-name">
-                        Fridge
-                    </div>
                 </div>
 
                 <div class="applet">
-                    <div class="card" id="grocery">
+                    <div class="card" id="grocery" onclick="window.location='grocery-list/grocery.html'">
                         <img src="icons/grocery_icon.png"
                             alt="Avatar" style="width:10em; height:10em;">
                     </div>
-                    <div class="app-name">
-                        Grocery
-                    </div>
                 </div>
 
                 <div class="applet">
-                    <div class="card" id="fridge">
+                    <div class="card" id="social">
                         <img src="icons/social_icon.png"
                             alt="Avatar" style="width:10em; height:10em;">
-                    </div>
-                    <div class="app-name">
-                        Social
                     </div>
                 </div>
 
@@ -96,15 +87,12 @@
 
             </div>
 
-            <div class="card" id="rotw">
-                <h3>Recipe of the Week</h3>
+            <div class="card" id="rotw-card">
+                <h3 id="rotw">Recipe of the Week</h3>
                 <div class="horizontal-container">
                     <div id="rotw_description">
                         <h4 id="rotw_name">Herb Crusted Chicken</h4>
-                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl. <br>
-                        Step 2 - Flatten Chicken Breast - Place the chicken breasts in between plastic wrap. Use a large
-                        wooden spoon or mallet to flatten the chicken breasts. <br>
-                        Step 3 - Season Chicken - Season both sides of the chicken breasts with the seasoning mixture.
+                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl.
                     </div>
                     <div id="rotw_time">
                         <img src="icons/timer_icon.png" id="timer_icon" alt="Timer Icon">
