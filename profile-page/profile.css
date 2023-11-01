@@ -38,3 +38,23 @@
     box-shadow: 2px 1px 1px, 1px 12px 3px rgb(196, 194, 190);
     transition: all .4s ease; /* zoom in */
 }
+
+.information {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1em;
+}
+
+
+/*Styling for Text Areas*/
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
