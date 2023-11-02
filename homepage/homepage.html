@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Main Tab</title>
+    <link rel="stylesheet" href="outline.css">
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Javascript functions for the webpage -->
+    <script>
+        function hamburger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <!-- Inner container -->
+    <div class="main-body">
+
+        <!-- Contents for the heading -->
+        <div class="heading-bar">
+            <div class="heading">
+                <!-- Linking hamburger menu -->
+                <img src="icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
+                <div class="centered-text">
+                    <h1>Kitchefy</h1>
+                </div>
+                <img src="icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+            </div>
+
+            <hr>
+
+            <!-- 
+                Linkes to the tabs 
+                
+                MODIFY: link you page with the href
+            
+            -->
+            <div id="myLinks">
+                <a href="homepage.html">Home</a>
+                <a href="grocery-list/grocery.html">Grocery List</a>
+                <a href="fridgeTab/fridgeTab.html">Fridge</a>
+                <a href="#placeholder">Shopping List</a>
+                <a href="#placeholder">Social</a>
+            </div>
+        </div>
+
+
+        <!--
+
+            Insert your content for the page here
+
+        -->
+        <div class="contents">
+            <div class="float-container">
+
+                <div class="applet">
+                    <div class="card" id="fridge" onclick="window.location='fridgeTab/fridgeTab.html'">
+                        <img src="icons/fridge.png"
+                            alt="Avatar" style="width:10em; height:10em;">
+                    </div>
+                </div>
+
+                <div class="applet">
+                    <div class="card" id="grocery" onclick="window.location='grocery-list/grocery.html'">
+                        <img src="icons/grocery_icon.png"
+                            alt="Avatar" style="width:10em; height:10em;">
+                    </div>
+                </div>
+
+                <div class="applet">
+                    <div class="card" id="social">
+                        <img src="icons/social_icon.png"
+                            alt="Avatar" style="width:10em; height:10em;">
+                    </div>
+                </div>
+
+                
+
+            </div>
+
+            <div class="card" id="rotw-card">
+                <h3 id="rotw">Recipe of the Week</h3>
+                <div class="horizontal-container">
+                    <div id="rotw_description">
+                        <h4 id="rotw_name">Herb Crusted Chicken</h4>
+                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl.
+                    </div>
+                    <div id="rotw_time">
+                        <img src="icons/timer_icon.png" id="timer_icon" alt="Timer Icon">
+                        Prep Time: 30 mins <br>
+                        Cook Time: 10 mins
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
