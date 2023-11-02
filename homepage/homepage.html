@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Tab</title>
-    <link rel="stylesheet" href="outline.css">
+    <link rel="stylesheet" href="../outline.css">
     <link rel="stylesheet" href="stylesheet.css">
 
     <!-- Javascript functions for the webpage -->
@@ -27,30 +27,18 @@
 
         <!-- Contents for the heading -->
         <div class="heading-bar">
-            <div class="heading">
-                <!-- Linking hamburger menu -->
-                <img src="icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
-                <div class="centered-text">
-                    <h1>Kitchefy</h1>
-                </div>
-                <img src="icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
-            </div>
-
-            <hr>
-
-            <!-- 
-                Linkes to the tabs 
-                
-                MODIFY: link you page with the href
+                <div class="heading">
+                    <!-- Linking hamburger menu -->
+                    <a href="homepage.html" class="home">
+                        <img src="../icons/home_icon.png" id="home_icon" height="75" width="75">
+                    </a>
             
-            -->
-            <div id="myLinks">
-                <a href="homepage.html">Home</a>
-                <a href="grocery-list/grocery.html">Grocery List</a>
-                <a href="fridgeTab/fridgeTab.html">Fridge</a>
-                <a href="#placeholder">Shopping List</a>
-                <a href="#placeholder">Social</a>
-            </div>
+                    <h1>Kitchefy</h1>
+
+                    <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                </div>
+                
+                <hr>
         </div>
 
 
@@ -63,22 +51,22 @@
             <div class="float-container">
 
                 <div class="applet">
-                    <div class="card" id="fridge" onclick="window.location='fridgeTab/fridgeTab.html'">
-                        <img src="icons/fridge.png"
+                    <div class="card" id="fridge" onclick="window.location='../fridgeTab/fridgeTab.html'">
+                        <img src="../icons/fridge.png"
                             alt="Avatar" style="width:10em; height:10em;">
                     </div>
                 </div>
 
                 <div class="applet">
-                    <div class="card" id="grocery" onclick="window.location='grocery-list/grocery.html'">
-                        <img src="icons/grocery_icon.png"
+                    <div class="card" id="grocery" onclick="window.location='../grocery-list/grocery.html'">
+                        <img src="../icons/grocery_icon.png"
                             alt="Avatar" style="width:10em; height:10em;">
                     </div>
                 </div>
 
                 <div class="applet">
                     <div class="card" id="social">
-                        <img src="icons/social_icon.png"
+                        <img src="../icons/social_icon.png"
                             alt="Avatar" style="width:10em; height:10em;">
                     </div>
                 </div>
@@ -95,7 +83,7 @@
                         Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl.
                     </div>
                     <div id="rotw_time">
-                        <img src="icons/timer_icon.png" id="timer_icon" alt="Timer Icon">
+                        <img src="../icons/timer_icon.png" id="timer_icon" alt="Timer Icon">
                         Prep Time: 30 mins <br>
                         Cook Time: 10 mins
                     </div>
