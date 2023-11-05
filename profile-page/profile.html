@@ -26,6 +26,7 @@
             }
             document.getElementById("editButton").style.display = "none";
             document.getElementById("saveButton").style.display = "block";
+            document.getElementById("addAllergyButton").style.display = "block";
         }
 
         function saveChanges() {
@@ -36,7 +37,24 @@
             }
             document.getElementById("editButton").style.display = "block";
             document.getElementById("saveButton").style.display = "none";
+            document.getElementById("addAllergyButton").style.display = "none";
         }
+
+        function addAllergy() {
+            var allergiesList = document.getElementById("allergiesList");
+            var newAllergyInput = document.createElement("input");
+            newAllergyInput.type = "text";
+            newAllergyInput.placeholder = "New Allergy";
+            newAllergyInput.classList.add("editable", "allergy");
+
+            allergiesList.appendChild(newAllergyInput);
+        }
+
+        function removeAllergies() {
+            var allergiesList = document.getElementById("allergiesList");
+            allergiesList.innerHTML = "";
+        }
+
     </script>
 
 </head>
@@ -144,16 +162,22 @@
                 <h3>Gender:</h3>
                 <div class="editable" id="genderText">Male</div>
                 <hr>
-                <h3>Allergies:</h3>
-                <ul class="editable" id="allergiesList">
-                    <li>Peanuts</li>
-                    <li>Shell Fish</li>
-                    <li>Apples</li>
-                </ul>
             </div>
             <button id="editButton" onclick="toggleEdit()">Edit</button>
             <button id="saveButton" style="display:none;" onclick="saveChanges()">Save</button>
-                
+            <br>
+
+            <!--Separate Section For Allergies-->
+            <h3>Allergies:</h3>
+            <div id="allergiesList">
+                <!-- <input type="text" class="editable" value="Peanuts">
+                <input type="text" class="editable" value="Shell Fish">
+                <input type="text" class="editable" value="Apples"> -->
+            </div>
+            <div id="allergyOptions">
+                <button id="addAllergyButton" onclick="addAllergy()">Add Allergy</button>
+                <button id="removeAllergyButton" onclick="removeAllergies()">Remove Allergies</button>
+            </div>
         </div>
     </div>
 </body>
