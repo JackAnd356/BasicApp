@@ -16,6 +16,45 @@
                 x.style.display = "block";
             }
         }
+
+
+        function toggleEdit() {
+            var fields = document.getElementsByClassName("editable");
+            for (var i = 0; i < fields.length; i++) {
+                fields[i].contentEditable = true;
+                fields[i].classList.add("edit-mode");
+            }
+            document.getElementById("editButton").style.display = "none";
+            document.getElementById("saveButton").style.display = "block";
+            document.getElementById("addAllergyButton").style.display = "block";
+        }
+
+        function saveChanges() {
+            var fields = document.getElementsByClassName("editable");
+            for (var i = 0; i < fields.length; i++) {
+                fields[i].contentEditable = false;
+                fields[i].classList.remove("edit-mode");
+            }
+            document.getElementById("editButton").style.display = "block";
+            document.getElementById("saveButton").style.display = "none";
+            document.getElementById("addAllergyButton").style.display = "none";
+        }
+
+        function addAllergy() {
+            var allergiesList = document.getElementById("allergiesList");
+            var newAllergyInput = document.createElement("input");
+            newAllergyInput.type = "text";
+            newAllergyInput.placeholder = "New Allergy";
+            newAllergyInput.classList.add("editable", "allergy");
+
+            allergiesList.appendChild(newAllergyInput);
+        }
+
+        function removeAllergies() {
+            var allergiesList = document.getElementById("allergiesList");
+            allergiesList.innerHTML = "";
+        }
+
     </script>
 
 </head>
@@ -29,7 +68,7 @@
                 <!-- Linking hamburger menu -->
                 <img src="../icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
                 <div class="centered-text">
-                    <h1>Welcome Winston!</h1>
+                    <h1>Profile</h1>
                 </div>
                 <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
             </div>
@@ -57,33 +96,36 @@
             Insert your content for the page here
 
         -->
-        <div class="contents">
+        <div class="information">
+            <div>
+                <h3>Name:</h3>
+                <div class="editable" id="nameText">Winston</div>
+                <hr>
+                <h3>Age:</h3>
+                <div class="editable" id="ageText">21</div>
+                <hr>
+                <h3>Email:</h3>
+                <div class="editable" id="emailText">tan@terpmail.umd.edu</div>
+                <hr>
+                <h3>Gender:</h3>
+                <div class="editable" id="genderText">Male</div>
+                <hr>
+            </div>
+            <button id="editButton" onclick="toggleEdit()">Edit</button>
+            <button id="saveButton" style="display:none;" onclick="saveChanges()">Save</button>
+            <br>
 
-            <div id="image-aboutme">
-                <img src="theRock.jpeg" alt="Profile Pic" id="profileImage">
-                <div id="aboutMeSection">
-                    <h2>About Me</h2>
-                    <div id="aboutMeContent">
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-                        </p>
-                    </div>
-                </div>
+            <!--Separate Section For Allergies-->
+            <h3>Allergies:</h3>
+            <div id="allergiesList">
+                <!-- <input type="text" class="editable" value="Peanuts">
+                <input type="text" class="editable" value="Shell Fish">
+                <input type="text" class="editable" value="Apples"> -->
             </div>
-            <h2>Favorite Recipes</h2>
-            <div class="card">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+            <div id="allergyOptions">
+                <button id="addAllergyButton" onclick="addAllergy()">Add Allergy</button>
+                <button id="removeAllergyButton" onclick="removeAllergies()">Remove Allergies</button>
             </div>
-            <h2>Liked Recipes</h2>
-            <div class="card">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            </div>
-            <div class="card">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-            </div>
-
         </div>
     </div>
 </body>
