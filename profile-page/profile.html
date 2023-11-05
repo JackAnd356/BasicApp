@@ -16,6 +16,27 @@
                 x.style.display = "block";
             }
         }
+
+
+        function toggleEdit() {
+            var fields = document.getElementsByClassName("editable");
+            for (var i = 0; i < fields.length; i++) {
+                fields[i].contentEditable = true;
+                fields[i].classList.add("edit-mode");
+            }
+            document.getElementById("editButton").style.display = "none";
+            document.getElementById("saveButton").style.display = "block";
+        }
+
+        function saveChanges() {
+            var fields = document.getElementsByClassName("editable");
+            for (var i = 0; i < fields.length; i++) {
+                fields[i].contentEditable = false;
+                fields[i].classList.remove("edit-mode");
+            }
+            document.getElementById("editButton").style.display = "block";
+            document.getElementById("saveButton").style.display = "none";
+        }
     </script>
 
 </head>
@@ -85,9 +106,10 @@
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
                 quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
             </div> -->
-            <div class>
+
+            
+            <!-- <div>
                 <h3>Name: </h3>Winston
-                <!-- <input type="text" placeholder="name"> -->
                 <hr>
                 <h3>Age: </h3> 21
                 <hr>
@@ -102,9 +124,35 @@
                     <li>Apples</li>
                 </ul>
             </div>
-            <button>Edit</button>
+            <form>
+                <h3>Name:</h3>
+                <input type="text" placeholder="Name" id="nameText">
+                <input type="submit">
+                <button>Edit</button>
+            </form> -->
 
-
+            <div>
+                <h3>Name:</h3>
+                <div class="editable" id="nameText">Winston</div>
+                <hr>
+                <h3>Age:</h3>
+                <div class="editable" id="ageText">21</div>
+                <hr>
+                <h3>Email:</h3>
+                <div class="editable" id="emailText">tan@terpmail.umd.edu</div>
+                <hr>
+                <h3>Gender:</h3>
+                <div class="editable" id="genderText">Male</div>
+                <hr>
+                <h3>Allergies:</h3>
+                <ul class="editable" id="allergiesList">
+                    <li>Peanuts</li>
+                    <li>Shell Fish</li>
+                    <li>Apples</li>
+                </ul>
+            </div>
+            <button id="editButton" onclick="toggleEdit()">Edit</button>
+            <button id="saveButton" style="display:none;" onclick="saveChanges()">Save</button>
                 
         </div>
     </div>
