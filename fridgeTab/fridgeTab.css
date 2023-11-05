@@ -1,0 +1,24 @@
+.search-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+input {
+    font-size: 1rem;
+}
+
+.fridge-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+    gap: .25rem;
+    margin-top: 1rem;
+}
+
+.fridge-item {
+    border: 2px solid gray;
+    border-radius: 10px;
+    background-color: azure;
+    padding: 1rem;
+
+}

@@ -1,0 +1,85 @@
+.card {
+  background-color: #5a8663;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 30px;
+  box-shadow: 2px 1px 4px gray, 1px 4px 5px rgb(225, 213, 213);
+  color: #ffffff;
+  /* border: solid green; */
+  transition: all .5s ease;
+}
+
+.card:hover {
+  transform: translate3D(0, -1px, 0) scale(1.02);
+  box-shadow: 2px 1px 1px, 1px 12px 3px rgb(196, 194, 190);
+  transition: all .4s ease;
+}
+
+#fridge {
+  background-color: #eade78;
+}
+
+#grocery {
+  background-color: #6177d1;
+}
+
+#social {
+  background-color: #c2646a;
+}
+
+#rotw {
+  font-size: 2em;
+  margin-block-start: 0.25em;
+  margin-block-end: 0.25em;
+  font-family: garamond, serif;
+}
+
+#rotw-card {
+  width: 100%;
+  height: 5%;
+}
+
+#rotw_description {
+  left: 0;
+  width: 70%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+}
+
+#rotw_time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  width: 30%;
+}
+
+#rotw_name {
+  font-family: garamond, serif;
+  line-height: 10px;
+  font-size: 1.5em;
+}
+
+#timer_icon {
+  width: 3em;
+  cursor: pointer;
+  right: 0;
+}
+
+.horizontal-container {
+  display: flex;
+  background-color: #0c3e0c;
+  border-radius: 10px;
+  flex-direction: row;
+}
+
+.float-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+}
