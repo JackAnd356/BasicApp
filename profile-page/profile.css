@@ -90,8 +90,7 @@ input[type=submit], select{
 
 /* Styling to text area */
 .editable.allergy {
-    color: blue;
-    background-color: #D6CC99;
+    background-color: #5ad45f;
 }
 
 /* Display of Add and Remove options */
