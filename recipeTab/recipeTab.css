@@ -81,7 +81,10 @@
     border: 1px solid #bcbcbc;
     border-radius: 10px;
     background-color: #dadada;
+    padding: 2px 5px 0px 5px;
+    margin: 1px 0px;
     height: 51px;
+    color: #000000;
 }
 
 #filter {
@@ -116,3 +119,10 @@
     display: block;
   }
   
+.show {
+    display: block;
+}
+
+.filterDropdown {
+    display: none;
+}
