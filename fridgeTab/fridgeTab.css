@@ -1,24 +1,120 @@
-.search-wrapper{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f5e0; /* Light green background color */
+}
+
+.main-body {
+    height: 85%;
+}
+
+.heading-bar{
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: hidden; /* Hide any overflowing text */
+}
+
+.contents {
     display: flex;
-    flex-direction: column;
-    gap: .25rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 20px;
+    height: 100%; /* Set the height to 100% */
+    width: 100%;
 }
 
-input {
-    font-size: 1rem;
+.search-section {
+    margin-right: 400px; /* Add right margin for spacing */
+    display: flex;
+    align-items: center;
 }
 
-.fridge-items-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
-    gap: .25rem;
-    margin-top: 1rem;
+.add-section {
+    margin-left: 400px; /* Add left margin for spacing */
+    display: flex;
+    align-items: center;
 }
 
-.fridge-item {
-    border: 2px solid gray;
-    border-radius: 10px;
-    background-color: azure;
-    padding: 1rem;
-
+#searchFood{
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #2e7d32; /* Green border */
+    background-color: #e8f5e9; /* Light green background color */
+    border-radius: 5px;
+    width: 100%; /* Adjust width as needed */
 }
+
+#foodName {
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #2e7d32; /* Green border */
+    background-color: #e8f5e9; /* Light green background color */
+    border-radius: 5px;
+    width: 20%; /* Adjust width as needed */
+}
+
+.search-button, .clear-button, .add-button {
+    padding: 10px 20px; /* Increased padding */
+    background-color: #2e7d32; /* Green button background color */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#foodCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%; /* Adjust width as needed */
+}
+
+.food-card {
+    background-color: #ffffff; /* White background color for cards */
+    border: 1px solid #2e7d32; /* Green border */
+    margin: 10px; /* Increased margin */
+    padding: 25px 50px 25px 50px; /* Increased padding */
+    border-radius: 10px; /* Increased border radius */
+    box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+.delete-icon {
+    cursor: pointer;
+    color: red;
+    font-size: 20px;
+    display: none;
+}
+
+.food-card:hover .delete-icon {
+    display: block;
+}
+
+#searchField {
+    display: flex;
+    align-items: center;
+    width: 65%;
+}
+
+#searchFood{
+    width: 80%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+
+button {
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    overflow: visible; /* Hide any overflowing text */
+    margin-right: auto; /* Add margin for spacing between elements */
+    width: 15%;
+    overflow: hidden;
+    text-align: center;
+}
+
+#foodCardsWrapper{
+    width: 90%;
+    padding-bottom: 20px;
+}
+

@@ -21,7 +21,9 @@
                 <div class="centered-text">
                     <h1>Fridge Inventory Tab</h1>
                 </div>
-                <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                <a href="../profile-page/profile.html">
+                    <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                </a>
             </div>
             
             <hr>
@@ -42,48 +44,24 @@
         </div>
 
 
-
         <div class="contents">
-
-            
-            <div class="search-wrapper">
-                <label for="search">Search Fridge</label>
-                <input type="search" id="search">
-            </div>
-            <div class="fridge-items-wrapper">
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
-                <div class="fridge-item">
-                    <div class="item-header">food name</div>
-                    <div class="item-body">quanity date etc.</div>
-                </div>
-        
+            <div id="searchField">
+                <input type="text" id="searchFood" placeholder="Search for food">
+                <button onclick="searchFoodCard()">Search</button>
+                <button onclick="clearSearch()">Clear</button>
             </div>
 
+            <div id="foodCardsWrapper">
+                <div id="foodCards"></div>
+            </div>
+
+
+            <div id="foodCardsWrapper"> 
+                <input type="text" id="foodName" placeholder="Enter food name and expiration">
+                <button onclick="addFoodCard()">Add</button>
+            </div>
         </div>
+
     </div>
 
 </body>
