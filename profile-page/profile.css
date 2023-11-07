@@ -96,12 +96,23 @@ input[type=submit], select{
 /* Display of Add and Remove options */
 #allergyOptions{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 #addAllergyButton, #removeAllergyButton {
     flex: 1;
 }
-#addAllergyButton, #removeAllergyButton {
-    flex: 1;
+
+/*
+Styling for number input
+*/
+.numDefault{
+    background-color: #ffebc6;
+    border-style: none;
+    font-size: 1em;
+}
+.numEdit{
+    background-color: white;
+    border-style: solid;
+    font-size: 1em;
 }
