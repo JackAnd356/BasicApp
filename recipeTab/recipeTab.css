@@ -54,6 +54,13 @@
     right: 0;
 }
 
+.filter-icon {
+    margin-top: 0.25em;
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+}
+
 .horizontal-container {
     display: flex;
     background-color: #0c3e0c;
@@ -63,11 +70,29 @@
 
 
 /*<----------------- Search List Stuff ------------------>*/
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    height: 65px;
+    flex-direction: row;
+}
+
+#filter-container {
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    background-color: #dadada;
+    height: 51px;
+}
+
+#filter {
+    margin-right: 0.25rem;
+}
+
 #myInput {
-    background-image: url('/css/searchicon.png'); 
+    background-image: url('../icons/search-icon.png'); 
     background-position: 10px 12px; 
     background-repeat: no-repeat; 
-    width: 92%; 
+    width: 80%; 
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     border: 1px solid #ddd;

@@ -46,7 +46,13 @@ s
             Insert your content for the page here
 
         -->
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a recipe..">
+        <div class="search-container">
+            <div class="search-container" id="filter-container">
+                <img src="../icons/filter-icon.png" class="filter-icon" alt="Filter Icon">
+                <p id="filter">Filter</p>
+            </div>
+            <input type="text" id="myInput" onkeyup="search()" placeholder="Search for a recipe..">
+        </div>
 
         <ul id="myUL">
             <li><div class="card" id="recipe-card">
@@ -159,7 +165,7 @@ s
     </div>
 
     <script>
-        function myFunction() {
+        function search() {
           // Declare variables
           var input, filter, ul, li, a, i, txtValue;
           input = document.getElementById('myInput');
