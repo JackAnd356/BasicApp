@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Tab</title>
+    <link rel="stylesheet" href="../outline.css">
+    <link rel="stylesheet" href="recipeTab.css">
+
+    <!-- Javascript functions for the webpage -->
+    <script>
+        function hamburger() {
+            var x = document.getElementById("myLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <!-- Inner container -->
+    <div class="main-body">
+
+        <!-- Contents for the heading -->
+        <div class="heading-bar">
+            <div class="heading">
+                <!-- Linking hamburger menu -->
+                <a href="../homepage/homepage.html" class="home">
+                    <img src="../icons/home_icon.png" id="home_icon" height="75" width="75">
+                </a>
+            
+                <div class="centered-text">
+                    <h1>Recipes</h1>
+                </div>
+                <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+            </div>
+            
+            <hr>
+        </div>
+
+
+        <!--
+s
+            Insert your content for the page here
+
+        -->
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for a recipe..">
+
+        <ul id="myUL">
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Herb Crusted Chicken</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 30 mins <br>
+                        Cook Time: 10 mins
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Vanilla Crème Brûlée</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Heat oven to 325 degrees. In a saucepan, combine cream, vanilla bean and salt; cook over low heat just until hot. Let sit for a few minutes, then discard vanilla bean. (If using vanilla extract, add it now.) <br>
+                        Step 2 - In a bowl, beat yolks and sugar together until light. Stir about a quarter of the vanilla cream into this mixture, then pour sugar-egg mixture into cream and stir. Pour into four 6-ounce ramekins and place ramekins in a baking dish; fill dish with boiling water halfway up the sides of the ramekins.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 30 mins <br>
+                        Cook Time: 20 mins
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Vegan Roasted Sweet Potato Salad</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Preheat oven at 400°F. <br>
+                        Step 2 - Cut sweet potatoes into 2” cubes. In a large bowl, toss the sweet potatoes with olive oil and taco seasoning. <br>
+                        Step 3 - Arrange on a baking sheet, careful not to overcrowd. Roast on the center rack in oven for 30 minutes, flipping the sweet potatoes half way through.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 20 mins <br>
+                        Cook Time: 40 mins
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Slow Cooked Ribs</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Prep Ribs: Prepare your ribs by removing the membrane and patting dry with a paper towel. <br>
+                        Step 2 - Dry Rub: Prepare the rub by combining brown sugar, paprika, garlic powder, onion powder, salt, and pepper. Rub evenly on top of the ribs.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 15 mins <br>
+                        Cook Time: 2 hrs
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Lentil Soup</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Sauté your onion, garlic, carrots and celery over over low heat for almost 10 minutes <br>
+                        Step 2 - Add everything else other than the lemon <br>
+                        Step 3 - Simmer 35 minutes until lentils are soft
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 30 mins <br>
+                        Cook Time: 1 hr
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Honey Garlic Pork Chops</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Preheat oven broiler (or grill) on medium-high heat. Season chops with salt, pepper and garlic powder just before cooking. <br>
+                        Step 2 - Heat oil in a pan or skillet over medium high heat until hot. Sear chops on both sides until golden and cooked through (about 4-5 minutes each side). Transfer to a plate; set aside.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 5 mins <br>
+                        Cook Time: 45 mins
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Shrimp Alfredo</h3>
+                <div class="horizontal-container">
+                    <div class="recipe_description">
+                        Step 1 - Toast the panko breadcrumbs in butter and garlic powder until brown. Set aside. <br>
+                        Step 2 - Sauté the shrimp in olive oil for about 1 minute + 20 seconds per side, set aside.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 30 mins <br>
+                        Cook Time: 30 mins
+                    </div>
+                </div>
+            </div></li>
+        </ul>
+        
+    </div>
+
+    <script>
+        function myFunction() {
+          // Declare variables
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById('myInput');
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName('li');
+        
+          // Loop through all list items, and hide those who don't match the search query
+          for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("h3")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+          }
+        }
+    </script>
+</body>
+</html>
