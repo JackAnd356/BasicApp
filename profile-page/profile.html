@@ -27,7 +27,19 @@
             document.getElementById("editButton").style.display = "none";
             document.getElementById("saveButton").style.display = "block";
             document.getElementById("addAllergyButton").style.display = "block";
+
+            // styling to weight when edit is selected
+            var inputWeight = document.getElementById("weightInput");
+            inputWeight.removeAttribute("disabled");
+            inputWeight.classList.remove("numDefault");
+            inputWeight.classList.add("numEdit");
+            // styling for age when save is selected
+            var inputAge = document.getElementById("ageInput");
+            inputAge.removeAttribute("disabled", true);
+            inputAge.classList.remove("numDefault");
+            inputAge.classList.add("numEdit");
         }
+
 
         function saveChanges() {
             var fields = document.getElementsByClassName("editable");
@@ -37,6 +49,17 @@
             }
             document.getElementById("editButton").style.display = "block";
             document.getElementById("saveButton").style.display = "none";
+
+            // styling for weight when save is selected
+            var inputWeight = document.getElementById("weightInput");
+            inputWeight.setAttribute("disabled", true);
+            inputWeight.classList.remove("numEdit");
+            inputWeight.classList.add("numDefault");
+            // styling for age when save is selected
+            var inputAge = document.getElementById("ageInput");
+            inputAge.setAttribute("disabled", true);
+            inputAge.classList.remove("numEdit");
+            inputAge.classList.add("numDefault");
         }
 
         function addAllergy() {
@@ -113,18 +136,24 @@
                 <div class="editable" id="nameText">Winston</div>
                 <hr>
                 <h3>Age:</h3>
-                <div class="editable" id="ageText">21</div>
+                <!-- <div class="editable" id="ageText">21</div> -->
+                <input id="ageInput" class="numDefault" type="number" min="1" max="100" step="1" value="21" disabled>
                 <hr>
                 <h3>Email:</h3>
                 <div class="editable" id="emailText">tan@terpmail.umd.edu</div>
                 <hr>
-                <h3>Gender:</h3>
+                <h3>Gender (Male, Female, Other):</h3>
                 <div class="editable" id="genderText">Male</div>
+                <hr>
+                <h3>Weight</h3>
+                <input id="weightInput" class="numDefault" type="number" min="1" max="1000" step="0.1" value="100.0" disabled>lbs
                 <hr>
             </div>
             <button id="editButton" onclick="toggleEdit()">Edit</button>
             <button id="saveButton" style="display:none;" onclick="saveChanges()">Save</button>
-            <br>
+            
+            
+            <br><br>
 
             <!--Separate Section For Allergies-->
             <h3>Allergies:</h3>
@@ -133,6 +162,7 @@
                 <input type="text" class="editable" value="Shell Fish">
                 <input type="text" class="editable" value="Apples"> -->
                 <input type="text" class="editable allergy" value="Peanuts">
+                <input type="text" class="editable allergy" value="Apples">
             </div>
             <div id="allergyOptions">
                 <button id="addAllergyButton" onclick="addAllergy()">Add Allergy</button>
