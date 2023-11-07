@@ -41,7 +41,7 @@ s
                 <img src="../icons/filter-icon.png" class="filter-icon" alt="Filter Icon">
                 <p id="filter">Filter</p>
             </button>
-            <input type="text" id="myInput" onkeyup="search()" placeholder="Search for a recipe..">
+            <input type="text" id="myInput" onkeyup="search()" placeholder="Search for a recipe.." onclick="showKeyboard()">
         </div>
 
         <div id="filterDropdown">
@@ -156,6 +156,7 @@ s
             </div></li>
         </ul>
         
+        <img src="../icons/fakeKeyboard.png" class="keyboard" id="keyboard" alt="Keyboard">
     </div>
 
     <script>
@@ -181,6 +182,10 @@ s
 
         function showFilter() {
             document.getElementById("filterDropdown").classList.toggle("show");
+        }
+
+        function showKeyboard() {
+            document.getElementById("keyboard").classList.toggle("show");
         }
     </script>
 </body>

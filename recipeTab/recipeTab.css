@@ -119,6 +119,15 @@
     display: block;
   }
   
+.keyboard {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
 .show {
     display: block;
 }
