@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Recipe Tab</title>
+    <title>Recipes</title>
     <link rel="stylesheet" href="../outline.css">
     <link rel="stylesheet" href="recipeTab.css">
 
@@ -48,7 +48,7 @@ s
             <h4>Protein Type</h4>
             <div class="horizontal-container" id="protein-container">
                 <article class="protein1">
-                    <input type="checkbox" id="protein1"/>
+                    <input type="checkbox" id="protein1" value="chicken">
                     <div class="check">
                       <span>
                         Chicken
@@ -57,7 +57,7 @@ s
                   </article>
                   
                   <article class="protein2">
-                    <input type="checkbox" id="protein2"/>
+                    <input type="checkbox" id="protein2" value="beef">
                     <div class="check">
                       <span>
                         Beef
@@ -66,7 +66,7 @@ s
                   </article>
                   
                   <article class="protein3">
-                    <input type="checkbox" id="protein3"/>
+                    <input type="checkbox" id="protein3" value="pork">
                     <div class="check">
                       <span>
                         Pork
@@ -75,7 +75,7 @@ s
                   </article>
                   
                   <article class="protein4">
-                    <input type="checkbox" id="protein4">
+                    <input type="checkbox" id="protein4" value="vegetarian">
                     <div class="check">
                       <span>
                         Vegetarian
@@ -88,15 +88,15 @@ s
                 <div class="switchbox">
                     <h5>Gluten Free: </h5>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" id="gluten" value="gluten">
                         <span class="slider round"></span>
                     </label>
                 </div>
 
                 <div class="switchbox">
-                    <h5>Spicy Foods: </h5>
+                    <h5>Not Spicy: </h5>
                     <label class="switch">
-                        <input type="checkbox" checked>
+                        <input type="checkbox" id="spicy" value="spicy">
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -107,8 +107,12 @@ s
             <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Herb Crusted Chicken</h3>
                 <div class="horizontal-container">
+                    <h8>Chicken</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
-                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl.
+                        Step 1 - Combine Seasoning - Mix all the seasonings together in a small bowl. <br>
+                        Step 2 - Flatten Chicken Breast - Place the chicken breasts in between plastic wrap. Use a large wooden spoon or mallet to flatten the chicken breasts. <br>
+                        Step 3 - Season Chicken - Season both sides of the chicken breasts with the seasoning mixture. 
                     </div>
                     <div class="recipe_time">
                         <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
@@ -121,6 +125,8 @@ s
             <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Vanilla Crème Brûlée</h3>
                 <div class="horizontal-container">
+                    <h8>Vegetarian</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
                         Step 1 - Heat oven to 325 degrees. In a saucepan, combine cream, vanilla bean and salt; cook over low heat just until hot. Let sit for a few minutes, then discard vanilla bean. (If using vanilla extract, add it now.) <br>
                         Step 2 - In a bowl, beat yolks and sugar together until light. Stir about a quarter of the vanilla cream into this mixture, then pour sugar-egg mixture into cream and stir. Pour into four 6-ounce ramekins and place ramekins in a baking dish; fill dish with boiling water halfway up the sides of the ramekins.
@@ -136,6 +142,8 @@ s
             <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Vegan Roasted Sweet Potato Salad</h3>
                 <div class="horizontal-container">
+                    <h8>Vegetarian</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
                         Step 1 - Preheat oven at 400°F. <br>
                         Step 2 - Cut sweet potatoes into 2” cubes. In a large bowl, toss the sweet potatoes with olive oil and taco seasoning. <br>
@@ -150,8 +158,28 @@ s
             </div></li>
 
             <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Buffalo Wings</h3>
+                <div class="horizontal-container">
+                    <h8>Chicken</h8>
+                    <h9>Spicy</h9>
+                    <div class="recipe_description">
+                        Step 1 - Prep Chicken Wings - cut wings in half to separate the drums from the wingettes. Pat the wings dry with a paper towel. Preheat the oven and line a rimmed baking sheet with foil and place a wire rack over the pan. <br>
+                        Step 2 - Make dry seasoning - Combine baking powder, salt, and garlic powder. <br>
+                        Step 3 - Season the wings - Place the chicken wings in a large mixing bowl and toss them in the dry seasoning until well-coated. Assemble the wings in a single layer over the rack.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 40 mins <br>
+                        Cook Time: 1 hr
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Slow Cooked Ribs</h3>
                 <div class="horizontal-container">
+                    <h8>Pork</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
                         Step 1 - Prep Ribs: Prepare your ribs by removing the membrane and patting dry with a paper towel. <br>
                         Step 2 - Dry Rub: Prepare the rub by combining brown sugar, paprika, garlic powder, onion powder, salt, and pepper. Rub evenly on top of the ribs.
@@ -165,8 +193,28 @@ s
             </div></li>
 
             <li><div class="card" id="recipe-card">
+                <h3 class="recipe_name">Grilled Ribeye Steak</h3>
+                <div class="horizontal-container">
+                    <h8>Beef</h8>
+                    <h9>None</h9>
+                    <div class="recipe_description">
+                        Step 1 - Set gas grill to high heat and season ribeye steaks. <br>
+                        Step 2 - Grill ribeye on direct heat (right over a flame), flipping after a few minutes. <br>
+                        Step 3 - Keep flipping as needed, until desired ribeye temperature is reached.
+                    </div>
+                    <div class="recipe_time">
+                        <img src="../icons/timer_icon.png" class="timer_icon" alt="Timer Icon">
+                        Prep Time: 45 mins <br>
+                        Cook Time: 30 mins
+                    </div>
+                </div>
+            </div></li>
+
+            <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Lentil Soup</h3>
                 <div class="horizontal-container">
+                    <h8>Vegetarian</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
                         Step 1 - Sauté your onion, garlic, carrots and celery over over low heat for almost 10 minutes <br>
                         Step 2 - Add everything else other than the lemon <br>
@@ -183,6 +231,8 @@ s
             <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Honey Garlic Pork Chops</h3>
                 <div class="horizontal-container">
+                    <h8>Pork</h8>
+                    <h9>None</h9>
                     <div class="recipe_description">
                         Step 1 - Preheat oven broiler (or grill) on medium-high heat. Season chops with salt, pepper and garlic powder just before cooking. <br>
                         Step 2 - Heat oil in a pan or skillet over medium high heat until hot. Sear chops on both sides until golden and cooked through (about 4-5 minutes each side). Transfer to a plate; set aside.
@@ -198,6 +248,8 @@ s
             <li><div class="card" id="recipe-card">
                 <h3 class="recipe_name">Shrimp Alfredo</h3>
                 <div class="horizontal-container">
+                    <h8>Seafood</h8>
+                    <h9>Gluten</h9>
                     <div class="recipe_description">
                         Step 1 - Toast the panko breadcrumbs in butter and garlic powder until brown. Set aside. <br>
                         Step 2 - Sauté the shrimp in olive oil for about 1 minute + 20 seconds per side, set aside.
@@ -215,6 +267,69 @@ s
     </div>
 
     <script>
+        const proteins = document.querySelectorAll("#protein-container input");
+        const diet = document.querySelectorAll("#diet-restrict input");
+
+        for (const protein of proteins) {
+            protein.addEventListener("click", updateDisplay);
+        }
+
+        for (const restriction of diet) {
+            restriction.addEventListener("click", updateDisplay)
+        }
+
+        function updateDisplay() {
+            var protArr = [];
+            var dietArr = [];
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            for (const protein of proteins) {
+                if (protein.checked) {
+                    protArr.push(protein.value);
+                }
+            }
+
+            for (const restriction of diet) {
+                if (restriction.checked) {
+                    dietArr.push(restriction.value);
+                }
+            }
+
+            if (protArr.length > 0) {
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("h8")[0];
+                    txtValue = a.textContent || a.innerText;
+                    for (const prot of protArr) {
+                        filter = prot.toUpperCase();
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "";
+                        } else {
+                            li[i].style.display = "none";
+                        }
+                    }
+                }
+            } else {
+                for (i = 0; i < li.length; i++) {
+                    li[i].style.display = "";
+                }
+            }
+
+            if (diet.length > 0) {
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("h9")[0];
+                    txtValue = a.textContent || a.innerText;
+                    for (const restriction of dietArr) {
+                        console.log(restriction);
+                        filter = restriction.toUpperCase();
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            li[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        }
+
         function search() {
           // Declare variables
           var input, filter, ul, li, a, i, txtValue;
