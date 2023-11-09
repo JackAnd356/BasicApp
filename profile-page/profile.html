@@ -60,6 +60,8 @@
             inputAge.setAttribute("disabled", true);
             inputAge.classList.remove("numEdit");
             inputAge.classList.add("numDefault");
+
+            saveUserInfo();
         }
 
         function addAllergy() {
@@ -76,6 +78,66 @@
             var allergiesList = document.getElementById("allergiesList");
             allergiesList.innerHTML = "";
         }
+
+
+        //Storing the User's data
+        // Function to save user information to local storage
+        function saveUserInfo() {
+            var name = document.getElementById("nameText").textContent;
+            var age = document.getElementById("ageInput").value;
+            var email = document.getElementById("emailText").textContent;
+            var gender = document.getElementById("genderText").textContent;
+            var weight = document.getElementById("weightInput").value;
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("age", age);
+            localStorage.setItem("email", email);
+            localStorage.setItem("gender", gender);
+            localStorage.setItem("weight", weight);
+        }
+
+        // Function to load user information from local storage
+        function loadUserInfo() {
+            document.getElementById("nameText").textContent = localStorage.getItem("name") || "Winston";
+            document.getElementById("ageInput").value = localStorage.getItem("age") || "21";
+            document.getElementById("emailText").textContent = localStorage.getItem("email") || "tan@terpmail.umd.edu";
+            document.getElementById("genderText").textContent = localStorage.getItem("gender") || "Male";
+            document.getElementById("weightInput").value = localStorage.getItem("weight") || "100.0";
+
+            // Load allergies from localStorage
+            var allergies = JSON.parse(localStorage.getItem("allergies"));
+            if (allergies) {
+                var allergiesList = document.getElementById("allergiesList");
+                allergiesList.innerHTML = "";
+                for (var i = 0; i < allergies.length; i++) {
+                    var newAllergyInput = document.createElement("input");
+                    newAllergyInput.type = "text";
+                    newAllergyInput.classList.add("editable", "allergy");
+                    newAllergyInput.value = allergies[i];
+                    allergiesList.appendChild(newAllergyInput);
+                }
+            }
+        }
+
+        // Stores Allergies List to local storage
+        function saveAllergyInformation() {
+            var allergiesList = document.getElementById("allergiesList");
+            var allergies = [];
+
+            // Loop through all the input elements with class "editable" and "allergy"
+            var allergyInputs = allergiesList.getElementsByClassName("editable allergy");
+            for (var i = 0; i < allergyInputs.length; i++) {
+                allergies.push(allergyInputs[i].value);
+            }
+
+            // Save the allergies array to localStorage
+            localStorage.setItem("allergies", JSON.stringify(allergies));
+
+            alert("Allergies Saved");
+        }
+
+        // Call the function to load user information when the page loads
+        window.onload = loadUserInfo;
 
     </script>
 
@@ -131,7 +193,7 @@
 
         -->
         <div class="information">
-            <div>
+            <div id="userInfo">
                 <h3>Name:</h3>
                 <div class="editable" id="nameText">Winston</div>
                 <hr>
@@ -167,6 +229,7 @@
             <div id="allergyOptions">
                 <button id="addAllergyButton" onclick="addAllergy()">Add Allergy</button>
                 <button id="removeAllergyButton" onclick="removeAllergies()">Remove Allergies</button>
+                <button id="saveAllergyButton" onclick="saveAllergyInformation()">Save Allergy Information</button>
             </div>
         </div>
     </div>
