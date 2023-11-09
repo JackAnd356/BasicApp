@@ -39,29 +39,6 @@ function clearSearch() {
 }
 
 
-/*
-function addFoodCard() {
-    const foodNameInput = document.getElementById("foodName");
-    const foodName = foodNameInput.value;
-
-    if (foodName.trim() !== "") {
-        const foodCards = document.getElementById("foodCards");
-        const foodCard = document.createElement("div");
-        foodCard.classList.add("food-card");
-        foodCard.textContent = foodName;
-        foodCard.setAttribute("onmouseover", "showDeleteIcon(this)");
-        foodCard.setAttribute("onmouseout", "hideDeleteIcon(this)");
-        foodCard.setAttribute("onclick", "deleteCard(this)");
-        const deleteIcon = document.createElement("span");
-        deleteIcon.textContent = "x";
-        deleteIcon.classList.add("delete-icon");
-        foodCard.appendChild(deleteIcon);
-        foodCards.appendChild(foodCard);
-        foodNameInput.value = "";
-    }
-}
-*/
-
 
 function showDeleteIcon(card) {
     const deleteIcon = card.querySelector(".delete-icon");
