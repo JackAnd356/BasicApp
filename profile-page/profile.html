@@ -60,6 +60,8 @@
             inputAge.setAttribute("disabled", true);
             inputAge.classList.remove("numEdit");
             inputAge.classList.add("numDefault");
+
+            saveUserInfo();
         }
 
         function addAllergy() {
@@ -76,6 +78,35 @@
             var allergiesList = document.getElementById("allergiesList");
             allergiesList.innerHTML = "";
         }
+
+
+        //Storing the User's data
+        // Function to save user information to local storage
+        function saveUserInfo() {
+            var name = document.getElementById("nameText").textContent;
+            var age = document.getElementById("ageInput").value;
+            var email = document.getElementById("emailText").textContent;
+            var gender = document.getElementById("genderText").textContent;
+            var weight = document.getElementById("weightInput").value;
+
+            localStorage.setItem("name", name);
+            localStorage.setItem("age", age);
+            localStorage.setItem("email", email);
+            localStorage.setItem("gender", gender);
+            localStorage.setItem("weight", weight);
+        }
+
+        // Function to load user information from local storage
+        function loadUserInfo() {
+            document.getElementById("nameText").textContent = localStorage.getItem("name") || "Winston";
+            document.getElementById("ageInput").value = localStorage.getItem("age") || "21";
+            document.getElementById("emailText").textContent = localStorage.getItem("email") || "tan@terpmail.umd.edu";
+            document.getElementById("genderText").textContent = localStorage.getItem("gender") || "Male";
+            document.getElementById("weightInput").value = localStorage.getItem("weight") || "100.0";
+        }
+
+        // Call the function to load user information when the page loads
+        window.onload = loadUserInfo;
 
     </script>
 
@@ -131,7 +162,7 @@
 
         -->
         <div class="information">
-            <div>
+            <div id="userInfo">
                 <h3>Name:</h3>
                 <div class="editable" id="nameText">Winston</div>
                 <hr>
