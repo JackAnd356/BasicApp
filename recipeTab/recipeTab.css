@@ -1,3 +1,7 @@
+body {
+    font-family: garamond, serif;
+}
+
 .card {
     background-color: #5a8663;
     padding: 1rem;
@@ -77,20 +81,6 @@
     flex-direction: row;
 }
 
-#filter-container {
-    border: 1px solid #bcbcbc;
-    border-radius: 10px;
-    background-color: #dadada;
-    padding: 2px 5px 0px 5px;
-    margin: 1px 0px;
-    height: 51px;
-    color: #000000;
-}
-
-#filter {
-    margin-right: 0.25rem;
-}
-
 #myInput {
     background-image: url('../icons/search-icon.png'); 
     background-position: 10px 12px; 
@@ -128,10 +118,186 @@
     width: 100%;
 }
 
-.show {
-    display: block;
+
+
+/*<------------------ Filter Stuff --------------------->*/
+#filter-container {
+    border: 1px solid #bcbcbc;
+    border-radius: 10px;
+    background-color: #dadada;
+    padding: 2px 5px 0px 5px;
+    margin: 1px 0px;
+    height: 51px;
+    color: #000000;
+}
+
+#filter {
+    margin-right: 0.25rem;
 }
 
 .filterDropdown {
     display: none;
+    background-color: #dddddd;
+    border-radius: 30px;
 }
+
+#filterBy {
+    margin: 0px;
+    padding-top: 10px;
+}
+
+#protein-container {
+    font-size: 2em;
+    padding: 0px 10px;
+    display: flex;
+    background-color: transparent;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+}
+
+h4 {
+    padding: 20px 0px 0px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+#protein  i {
+    font-size: 60px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+}
+
+article {
+    position: relative;
+    width: 140px;
+    height: 100px;
+    margin: 5px;
+    float: left;
+    background-color: #f5f5f5;
+    border: 2px solid #445d48;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+span {
+    font-size: .75em;
+}
+
+.check {
+    padding-top: 30px;
+    text-align: center;
+    border-radius: 17px;
+    box-sizing: border-box;
+}
+
+article div {
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    transition: .5s ease;
+}
+  
+article input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    height: 100px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.show {
+    display: block;
+}
+
+input[type=checkbox]:checked ~ div {
+    background-color: #85ff89;
+}
+
+/*<------------------ Sliders ----------------->*/
+#diet-restrict {
+    background-color: transparent;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 20px;
+    padding-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+.switchbox {
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+h5 {
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #909090;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #85ff89;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #85ff89;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }

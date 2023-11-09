@@ -44,8 +44,63 @@ s
             <input type="text" id="myInput" onkeyup="search()" placeholder="Search for a recipe.." onclick="showKeyboard()">
         </div>
 
-        <div id="filterDropdown">
+        <div class="filterDropdown" id="filterDropdown">
+            <h4>Protein Type</h4>
+            <div class="horizontal-container" id="protein-container">
+                <article class="protein1">
+                    <input type="checkbox" id="protein1"/>
+                    <div class="check">
+                      <span>
+                        Chicken
+                      </span>
+                    </div>
+                  </article>
+                  
+                  <article class="protein2">
+                    <input type="checkbox" id="protein2"/>
+                    <div class="check">
+                      <span>
+                        Beef
+                      </span>
+                    </div>
+                  </article>
+                  
+                  <article class="protein3">
+                    <input type="checkbox" id="protein3"/>
+                    <div class="check">
+                      <span>
+                        Pork
+                      </span>
+                    </div>
+                  </article>
+                  
+                  <article class="protein4">
+                    <input type="checkbox" id="protein4">
+                    <div class="check">
+                      <span>
+                        Vegetarian
+                      </span>
+                    </div>
+            </div>
 
+            <h4>Dietary Restrictions</h4>
+            <div class="horizontal-container" id="diet-restrict">
+                <div class="switchbox">
+                    <h5>Gluten Free: </h5>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div class="switchbox">
+                    <h5>Spicy Foods: </h5>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
         </div>
 
         <ul id="myUL">
