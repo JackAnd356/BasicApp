@@ -17,36 +17,26 @@
         <div class="heading-bar">
             <div class="heading">
                 <!-- Linking hamburger menu -->
-                <img src="../icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
-                <div class="centered-text">
-                    <h1>Fridge Inventory Tab</h1>
-                </div>
-                <a href="../profile-page/profile.html">
-                    <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                <a href="../homepage/homepage.html" class="home">
+                    <img src="../icons/home_icon.png" id="home_icon" height="75" width="75">
                 </a>
+        
+                <h1>Fridge Inventory</h1>
+
+                <a href="../profile-page/profile.html" class="profile">
+                    <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                </a> 
             </div>
             
             <hr>
-            
-            <!-- 
-                Linkes to the tabs 
-                
-                MODIFY: link you page with the href
-            
-            -->
-            <div id="myLinks">
-                <a href="../homepage.html">Home</a>
-                <a href="../grocery-list/grocery.html">Grocery List</a>
-                <a href="../fridgeTab/fridgeTab.html">Fridge</a>
-                <a href="#placeholder">Shopping List</a>
-                <a href="#placeholder">Social</a>
-            </div>
-        </div>
+    </div>
 
 
         <div class="contents">
-            <div id="searchField">
-                <input type="text" id="searchFood" placeholder="Search for food">
+
+
+            <input type="text" class="searchBar" placeholder="Search for food">
+            <div class="searchButtons">              
                 <button onclick="searchFoodCard()">Search</button>
                 <button onclick="clearSearch()">Clear</button>
             </div>
@@ -55,9 +45,9 @@
                 <div id="foodCards"></div>
             </div>
 
-
-            <div id="foodCardsWrapper"> 
-                <input type="text" id="foodName" placeholder="Enter food name and expiration">
+            <br>
+            <input type="text" class="searchBar" id="foodName" placeholder="Enter food name and expiration">
+            <div class="searchButtons"> 
                 <button onclick="addFoodCard()">Add</button>
             </div>
         </div>

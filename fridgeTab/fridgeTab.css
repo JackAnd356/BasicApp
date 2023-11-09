@@ -18,7 +18,7 @@ html, body {
 
 .contents {
     display: flex;
-    justify-content: space-between;
+
     align-items: flex-start;
     margin: 20px;
     height: 100%; /* Set the height to 100% */
@@ -37,23 +37,9 @@ html, body {
     align-items: center;
 }
 
-#searchFood{
-    padding: 10px;
-    height: 40px;
-    border: 1px solid #2e7d32; /* Green border */
-    background-color: #e8f5e9; /* Light green background color */
-    border-radius: 5px;
-    width: 100%; /* Adjust width as needed */
-}
 
-#foodName {
-    padding: 10px;
-    height: 40px;
-    border: 1px solid #2e7d32; /* Green border */
-    background-color: #e8f5e9; /* Light green background color */
-    border-radius: 5px;
-    width: 20%; /* Adjust width as needed */
-}
+
+
 
 .search-button, .clear-button, .add-button {
     padding: 10px 20px; /* Increased padding */
@@ -91,30 +77,33 @@ html, body {
     display: block;
 }
 
-#searchField {
-    display: flex;
-    align-items: center;
-    width: 65%;
-}
 
-#searchFood{
-    width: 80%;
+
+.searchBar{
     overflow: hidden;
     margin-right: 10px;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #2e7d32; /* Green border */
+    background-color: #e8f5e9; /* Light green background color */
+    border-radius: 5px;
+    width: 100%; /* Adjust width as needed */
 }
+
 
 
 button {
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    overflow: visible; /* Hide any overflowing text */
-    margin-right: auto; /* Add margin for spacing between elements */
-    width: 15%;
+    width: 200px;
     overflow: hidden;
     text-align: center;
 }
 
-#foodCardsWrapper{
-    width: 90%;
-    padding-bottom: 20px;
-}
 
+
+.fridgeButtons {
+    display: flex;
+    justify-content: center;
+
+    
+
+}
