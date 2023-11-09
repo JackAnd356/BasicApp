@@ -1,11 +1,29 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f5e0; /* Light green background color */
+}
+
 #list {
     list-style-type: none;
     padding: 0;
 }
-.item {
+
+.item input[type="checkbox"] {
+
+    margin-right: 10px;
+}
+
+.input {
     display: flex;
     align-items: center;
-}
-.item input[type="checkbox"] {
-    margin-right: 10px;
+    padding: 10px;
+    height: 40px;
+    border: 1px solid #2e7d32; /* Green border */
+    background-color: #e8f5e9; /* Light green background color */
+    border-radius: 5px;
+    width: 100%; /* Adjust width as needed */
 }

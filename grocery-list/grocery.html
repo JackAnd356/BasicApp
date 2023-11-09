@@ -28,11 +28,16 @@
         <div class="heading-bar">
             <div class="heading">
                 <!-- Linking hamburger menu -->
-                <img src="../icons/hamburgerIcon.png" id="hamburgerIcon" alt="Hamburger Icon" onclick="hamburger()">
+                <a href="../homepage/homepage.html" class="home">
+                    <img src="../icons/home_icon.png" id="home_icon" height="75" width="75">
+                </a>
+            
                 <div class="centered-text">
-                    <h1>Welcome Winston!</h1>
+                    <h1>Shopping List</h1>
                 </div>
-                <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                <a href="../profile-page/profile.html">
+                    <img src="../icons/Profile_Icon.png" id="profile_icon" alt="Profile Icon">
+                </a>
             </div>
             
             <hr>
@@ -44,10 +49,10 @@
             
             -->
             <div id="myLinks">
-                <a href="../homepage.html">Home</a>
-                <a href="../grocery-list/grocery.html">Grocery List</a>
+                <a href="../homepage/homepage.html">Home</a>
+                <a href="../grocery-list/grocery.html">Shopping List</a>
                 <a href="../fridgeTab/fridgeTab.html">Fridge</a>
-                <a href="#placeholder">Shopping List</a>
+                <a href="#placeholder">...</a>
                 <a href="#placeholder">Social</a>
             </div>
         </div>
@@ -58,15 +63,28 @@
             Insert your content for the page here
 
         -->
-        <h1>Shopping List</h1>
+        
         <div>
-            <input type="text" id="item" placeholder="Enter an item">
+            
+            <label>Saved Lists<select class="input" id="savedListDropdown">
+                <option value="" disabled selected>Select a List</option>
+            </select></label>
+            <button onclick="loadList()">Load List</button>
+            <button onclick="removeList()">Remove List</button>
+
+            <br>
+            <br>
+
+            <input type="text" class="input" id="item" placeholder="Enter an item">
             <button onclick="addItem()">Add</button>
+            <button onclick="clearList()">Clear</button>
+            <button onclick="saveList()">Save List</button>
         </div>
         <ul id="list">
             <!-- Your list items will appear here -->
         </ul>
             <div class="contents">
+                <!-- <input type="text" class="input" id="listName" placeholder="Enter list name"> -->
                 <script>
                     function addItem() {
                         const itemText = document.getElementById('item').value;
@@ -84,25 +102,111 @@
             
                         document.getElementById('list').appendChild(itemElement);
                         document.getElementById('item').value = '';
+
+                        
                     }
 
                     function toggleItem(checkbox) {
-                const itemText = checkbox.nextElementSibling;
-                if (checkbox.checked) {
-                    itemText.style.textDecoration = 'line-through';
-                } else {
-                    itemText.style.textDecoration = 'none';
-                }
-            }
+                        const itemText = checkbox.nextElementSibling;
+                        if (checkbox.checked) {
+                            itemText.style.textDecoration = 'line-through';
+                        } else {
+                            itemText.style.textDecoration = 'none';
+                        }
+                    }
 
-            function removeItem(button) {
-                const listItem = button.parentElement;
-                listItem.remove();
-            }
-        </script>
-            
+                    function removeItem(button) {
+                        const listItem = button.parentElement;
+                        listItem.remove();
+                    }
 
-        </div>
+                    function saveList() {
+                        const listName = prompt('Enter a name for the list (Use the same name if you wish to update a list):');
+                        if (!listName) {
+                            alert('Please enter a name for the list.');
+                            return;
+                        }
+
+                        const listItems = document.getElementById('list').innerHTML;
+                        const savedLists = JSON.parse(localStorage.getItem('savedLists')) || {};
+                        
+                        // Check if the list already exists, then update it
+                        if (savedLists.hasOwnProperty(listName)) {
+                            if (confirm('List with this name already exists. Do you want to update it?')) {
+                                savedLists[listName] = listItems;
+                                localStorage.setItem('savedLists', JSON.stringify(savedLists));
+                                updateDropdown();
+                                alert('List updated successfully!');
+                            }
+                        } else {
+                            // If the list doesn't exist, create a new entry
+                            savedLists[listName] = listItems;
+                            localStorage.setItem('savedLists', JSON.stringify(savedLists));
+                            updateDropdown();
+                            alert('List saved successfully!');
+                        }
+                    }
+
+                    function loadList() {
+                        const selectedListName = document.getElementById('savedListDropdown').value;
+                        const savedLists = JSON.parse(localStorage.getItem('savedLists')) || {};
+                        const savedList = savedLists[selectedListName];
+
+                        if (savedList) {
+                            document.getElementById('list').innerHTML = savedList;
+                        } else {
+                            alert('List not found. Please select a valid list.');
+                        }
+                    }
+
+                    function removeList() {
+                        const selectedListName = document.getElementById('savedListDropdown').value;
+                        if (selectedListName === 'empty') {
+                            alert('Please select a valid list to remove.');
+                            return;
+                        }
+
+                        const savedLists = JSON.parse(localStorage.getItem('savedLists')) || {};
+                        if (savedLists.hasOwnProperty(selectedListName)) {
+                            if (confirm(`Are you sure you want to remove the list '${selectedListName}'?`)) {
+                                delete savedLists[selectedListName];
+                                localStorage.setItem('savedLists', JSON.stringify(savedLists));
+                                updateDropdown();
+                                alert('List removed successfully!');
+                                // Clear the current list after removal
+                                document.getElementById('list').innerHTML = '';
+                            }
+                        } else {
+                            alert('List not found. Please select a valid list to remove.');
+                        }
+                    }
+
+                    function updateDropdown() {
+                        const savedLists = JSON.parse(localStorage.getItem('savedLists')) || {};
+                        const dropdown = document.getElementById('savedListDropdown');
+                        dropdown.innerHTML = '';
+
+                       // Add option for an empty list
+                        const emptyOption = document.createElement('option');
+                        emptyOption.value = 'empty';
+                        emptyOption.text = 'New List';
+                        dropdown.add(emptyOption);
+
+                        for (const listName in savedLists) {
+                            const option = document.createElement('option');
+                            option.value = listName;
+                            option.text = listName;
+                            dropdown.add(option);
+                        }
+                    }
+
+                    function clearList() {
+                        document.getElementById('list').innerHTML = '';
+                    }
+
+                    updateDropdown();
+                </script>
+            </div>
     </div>
 </body>
 </html>
