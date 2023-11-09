@@ -103,6 +103,37 @@
             document.getElementById("emailText").textContent = localStorage.getItem("email") || "tan@terpmail.umd.edu";
             document.getElementById("genderText").textContent = localStorage.getItem("gender") || "Male";
             document.getElementById("weightInput").value = localStorage.getItem("weight") || "100.0";
+
+            // Load allergies from localStorage
+            var allergies = JSON.parse(localStorage.getItem("allergies"));
+            if (allergies) {
+                var allergiesList = document.getElementById("allergiesList");
+                allergiesList.innerHTML = "";
+                for (var i = 0; i < allergies.length; i++) {
+                    var newAllergyInput = document.createElement("input");
+                    newAllergyInput.type = "text";
+                    newAllergyInput.classList.add("editable", "allergy");
+                    newAllergyInput.value = allergies[i];
+                    allergiesList.appendChild(newAllergyInput);
+                }
+            }
+        }
+
+        // Stores Allergies List to local storage
+        function saveAllergyInformation() {
+            var allergiesList = document.getElementById("allergiesList");
+            var allergies = [];
+
+            // Loop through all the input elements with class "editable" and "allergy"
+            var allergyInputs = allergiesList.getElementsByClassName("editable allergy");
+            for (var i = 0; i < allergyInputs.length; i++) {
+                allergies.push(allergyInputs[i].value);
+            }
+
+            // Save the allergies array to localStorage
+            localStorage.setItem("allergies", JSON.stringify(allergies));
+
+            alert("Allergies Saved");
         }
 
         // Call the function to load user information when the page loads
@@ -198,6 +229,7 @@
             <div id="allergyOptions">
                 <button id="addAllergyButton" onclick="addAllergy()">Add Allergy</button>
                 <button id="removeAllergyButton" onclick="removeAllergies()">Remove Allergies</button>
+                <button id="saveAllergyButton" onclick="saveAllergyInformation()">Save Allergy Information</button>
             </div>
         </div>
     </div>
