@@ -2,6 +2,10 @@ body {
     font-family: garamond, serif;
 }
 
+h1 {
+    font-family: Arial, sans-serif;
+}
+
 .card {
     background-color: #5a8663;
     padding: 1rem;
@@ -134,8 +138,9 @@ h9 {
 #filter-container {
     border: 1px solid #bcbcbc;
     border-radius: 10px;
+    font-size: 18px;
     background-color: #dadada;
-    padding: 2px 5px 0px 5px;
+    padding: 0px 5px 0px 5px;
     margin: 1px 0px;
     height: 51px;
     color: #000000;
@@ -169,6 +174,7 @@ h9 {
 h4 {
     margin-top: 0px;
     padding: 20px 0px 0px;
+    font-size: 30px;
     margin-left: 20px;
     margin-bottom: 10px;
 }
@@ -255,6 +261,7 @@ input[type=checkbox]:checked ~ div {
 
 h5 {
     margin-top: 7px;
+    font-size: 25px;
     margin-bottom: 0px;
 }
   
