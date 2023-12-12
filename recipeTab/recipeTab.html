@@ -42,6 +42,7 @@ s
                 <p id="filter">Filter</p>
             </button>
             <input type="text" id="myInput" onkeyup="search()" placeholder="Search for a recipe.." onclick="showKeyboard()">
+            <button class="search-container" id="openBtn" onclick="openForm()">Add Recipe</button>
         </div>
 
         <div class="filterDropdown" id="filterDropdown">
@@ -262,6 +263,21 @@ s
                 </div>
             </div></li>
         </ul>
+
+        <div class="recipe-popup" id="addRecipe">
+            <div class="form-container">
+                <label for="rname"><b>Recipe Name:    </b></label>
+                <input type="text" name="rname" id="recipeNameInput" placeholder="Enter a name.." onclick="showKeyboard()" required>
+                <label for="rsteps"><b>Recipe Steps:   </b></label>
+                <input type="text" id="recipeSteps" placeholder="Enter the steps.." onclick="showKeyboard()" required>
+                <label for="rprep"><b>Recipe Prep:</b></label>
+                <input type="text" id="recipePrepTime" placeholder="Enter the time to prep.." onclick="showKeyboard()" required>
+                <label for="rcook"><b>Recipe Cook:</b></label>
+                <input type="text" id="recipeCookTime" placeholder="Enter the time to cook.." onclick="showKeyboard()" required>
+                <button type="submit" class="btn" id="addBtn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </div>
         
         <img src="../icons/fakeKeyboard.png" class="keyboard" id="keyboard" alt="Keyboard">
     </div>
@@ -328,6 +344,33 @@ s
                     }
                 }
             }
+        }
+
+        const rname = document.querySelector('#recipeNameInput')
+        const rsteps = document.querySelector('#recipeSteps')
+        const rprep = document.querySelector('#recipePrepTime')
+        const rcook = document.querySelector('#recipeCookTime')
+        const addBtn = document.querySelector('#addBtn')
+
+        addBtn.addEventListener('click', () => {
+            const ul = document.getElementById("myUL");
+            const li = document.createAttribute('li');
+            container = document.createAttribute('div');
+            container.classList = 'card';
+            container.id = 'recipe-card';
+            namecard = document.createAttribute('h3');
+            namecard.classList = 'recipe_name';
+            namecard.innerHTML = rname.value;
+            li.innerHTML = container;
+            ul.appendChild(li);
+        })
+
+        function openForm() {
+            document.getElementById("addRecipe").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("addRecipe").style.display = "none";
         }
 
         function search() {

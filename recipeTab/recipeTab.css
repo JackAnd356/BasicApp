@@ -319,3 +319,72 @@ h5 {
   .slider.round:before {
     border-radius: 50%;
   }
+
+/*<------------------ Adding New Recipes ------------------------>*/
+#openBtn {
+    margin: 0px;
+    height: 53px;
+    padding: 8px 10px;
+}
+  
+  /* The popup form - hidden by default */
+  .recipe-popup {
+    display: none;
+    position: fixed;
+    top: 100px;
+    right: 15px;
+    z-index: 9;
+  }
+
+  /* Add styles to the form container */
+.form-container {
+    max-width: 70%;
+    padding: 10px;
+    margin: auto;
+    font-size: 45px;
+    border: 3px solid #f1f1f1;
+    background-color: white;
+    border-radius: 20px;
+  }
+
+  #recipeNameInput {
+    width: 50%;
+    height: 65px;
+    font-size: 30px;
+  } 
+  
+  #recipeSteps {
+    width: 50%;
+    height: 65px;
+    font-size: 30px;
+  } 
+  
+  #recipePrepTime {
+    width: 50%;
+    height: 65px;
+    font-size: 30px;
+  }
+  
+  #recipeCookTime {
+    width: 50%;
+    height: 65px;
+    font-size: 30px;
+  }
+
+  /* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  
